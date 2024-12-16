@@ -29,7 +29,7 @@
         <i class="fa-solid fa-plus"></i> Add New Item
       </button>
     </div>
-    <!-- Modal -->
+    <!-- Modal for adding a new item -->
     <div
       class="modal fade"
       id="addNewModal"
@@ -50,7 +50,95 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="imageUrl"
+                  placeholder="https://example.com/displayimg.png"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="taskTitle" class="form-label">Task Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="taskTitle"
+                  placeholder="Please enter your Task Title"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tags" class="form-label">Task Type</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tags"
+                  placeholder="Please enter your Task Type"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="taskDescription" class="form-label"
+                  >Task Description</label
+                >
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="taskDescription"
+                  rows="4"
+                  placeholder="Please enter your Task Description"
+                  required
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for viewing the detailed info on the card -->
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#showTask"
+    >
+      Launch demo modal
+    </button>
+    <!-- show task btn not trigger yet -->
+    <div
+      class="modal fade"
+      id="showTask"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="showTaskLabel">Task Details</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body task__modal__body"></div>
           <div class="modal-footer">
             <button
               type="button"
@@ -121,7 +209,9 @@
         </div>
       </section>
       <section class="mt-5">
-        <div class="row task__contents"></div>
+        <div class="row task__contents">
+          <h5>The place where you can add your tasks</h5>
+        </div>
       </section>
     </div>
     <script src="script.js"></script>
